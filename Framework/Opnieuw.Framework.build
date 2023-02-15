@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<project name="Opnieuw.Framework.dll" default="build" basedir=".">
+	<description>Opnieuw.Framework.dll</description>
+	<property name="debug" value="true" />
+	<ifnot propertyexists="onlinux">
+		<property name="onlinux" value="false" />
+	</ifnot>
+	<target name="build" description="compiles the source code">
+        	<csc target="library" output="..\bin\Opnieuw.Framework.dll" debug="${debug}">
+			<sources>
+				<includes name="AssemblyInfo.cs" />
+		                <includes name="*.cs" />
+			</sources>
+        	</csc>
+	</target>
+	<target name="test" depends="build">
+		<nant buildfile="Test\Opnieuw.Framework.Test.build" />
+	</target>
+</project>

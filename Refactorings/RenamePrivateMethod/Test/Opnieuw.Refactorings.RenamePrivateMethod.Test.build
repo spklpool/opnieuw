@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<project name="Opnieuw.Refactorings.RenamePrivateMethod.Test.dll" default="test" basedir=".">
+    <description>Opnieuw.Refactorings.RenamePrivateMethod.Test.dll</description>
+    <ifnot propertyexists="formatterType">
+	<property name="formatterType" value="Plain" />
+    </ifnot>
+    <ifnot propertyexists="onlinux">
+	<property name="onlinux" value="false" />
+    </ifnot>
+    <property name="debug" value="true" />
+    <target name="build" description="compiles the source code">
+        <csc target="library" output="..\..\..\bin\Opnieuw.Refactorings.RenamePrivateMethod.Test.dll" debug="${debug}">
+            <references>
+                <includes name="..\..\..\lib\nunit.framework.dll" />
+                <includes name="..\..\..\bin\Opnieuw.Framework.dll" />
+                <includes name="..\..\..\bin\Opnieuw.Parsers.CSParser.dll" />
+                <includes name="..\..\..\bin\Opnieuw.Refactorings.RenamePrivateMethod.dll" />
+            </references>
+            <sources>
+                <includes name="*.cs" />
+            </sources>
+        </csc>
+    </target>
+    <target name="test" depends="build">
+	<ifnot propertytrue="onlinux">
+	    <nunit2>
+		<formatter type="${formatterType}" usefile="false"/>
+		<test assemblyname="..\..\..\bin\Opnieuw.Refactorings.RenamePrivateMethod.Test.dll" fork="true"/>
+	    </nunit2>
+	</ifnot>
+    </target>
+</project>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<OpnieuwConfiguration xmlns="http://tempuri.org/RefacrotingsSchema.xsd">
+	<RefactoringList>
+		<Refactoring>
+			<Name>Opnieuw.ExtractInterface</Name>
+			<GUIClassName>Opnieuw.ExtractInterface.ExtractInterfaceGUI</GUIClassName>
+			<ClassName>Opnieuw.ExtractInterface.ExtractInterfaceRefactoring</ClassName>
+			<FriendlyName>Extract Interface</FriendlyName>
+		</Refactoring>
+		<Refactoring>
+			<Name>Opnieuw.ExtractMethod</Name>
+			<GUIClassName>Opnieuw.ExtractMethod.ExtractMethodGUI</GUIClassName>
+			<ClassName>Opnieuw.ExtractMethod.ExtractMethodRefactoring</ClassName>
+			<FriendlyName>Extract Method</FriendlyName>
+		</Refactoring>
+		<Refactoring>
+			<Name>Opnieuw.Refactorings.RenamePrivateMethod</Name>
+			<GUIClassName>Opnieuw.Refactorings.RenamePrivateMethod.RenamePrivateMethodGUI</GUIClassName>
+			<ClassName>Opnieuw.Refactorings.RenamePrivateMethod.RenamePrivateMethodRefactoring</ClassName>
+			<FriendlyName>Rename Private Method</FriendlyName>
+		</Refactoring>
+	</RefactoringList>
+	<LanguageList>
+		<Language 
+			Name="Opnieuw.Parsers.CSParser" 
+			ViewControlerClassName="Opnieuw.Parsers.CSParser.CSViewControler"
+			CodeDomProviderClassName="Opnieuw.Parsers.CSParser.CSCodeDomProvider"
+			FriendlyName="C#" />
+	</LanguageList>
+	<PropertyList>
+		<Property Name="ParseBeforeExecute" Value="true" />
+		<Property Name="ParseAfterExecute" Value="true" />
+	</PropertyList>
+</OpnieuwConfiguration>

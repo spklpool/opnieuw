@@ -1,0 +1,12 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" appbase="bin" binpathtype="Auto">
+    <assembly path="Opnieuw.Parsers.CSParser.Test.dll" />
+    <assembly path="Opnieuw.Framework.Test.dll" />
+    <assembly path="Opnieuw.GUIKit.Test.dll" />
+    <assembly path="Opnieuw.Refactorings.ExtractInterface.Test.dll" />
+    <assembly path="Opnieuw.Refactorings.ExtractMethod.Test.dll" />
+    <assembly path="Opnieuw.Refactorings.RenamePrivateMethod.Test.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto" />
+</NUnitProject>

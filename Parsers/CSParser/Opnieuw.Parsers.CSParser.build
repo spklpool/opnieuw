@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<project name="Opnieuw.Framework.Test" default="build" basedir=".">
+    <description>Opnieuw.Framework.Test</description>
+    <property name="debug" value="true" />
+    <ifnot propertyexists="onlinux">
+	<property name="onlinux" value="false" />
+    </ifnot>
+    <target name="build" description="compiles the source code">
+        <csc target="library" output="..\..\bin\Opnieuw.Parsers.CSParser.dll" debug="${debug}">
+            <references>
+                <includes name="System.Drawing.dll" />
+                <includes name="System.Windows.Forms.dll" />
+                <includes name="..\..\bin\Opnieuw.Framework.dll" />
+            </references>
+            <sources>
+                <includes name="*.cs" />
+                <includes name="Arguments\*.cs" />
+                <includes name="Attributes\*.cs" />
+                <includes name="Classes\*.cs" />
+                <includes name="Delegates\*.cs" />
+                <includes name="Enums\*.cs" />
+                <includes name="Expressions\*.cs" />
+                <includes name="Identifiers\*.cs" />
+                <includes name="Interfaces\*.cs" />
+                <includes name="Modifiers\*.cs" />
+                <includes name="Namespaces\*.cs" />
+                <includes name="Parameters\*.cs" />
+                <includes name="Statements\*.cs" />
+                <includes name="Structs\*.cs" />
+                <includes name="Types\*.cs" />
+                <includes name="Utilities\*.cs" />
+                <includes name="Utilities\Comments\*.cs" />
+                <includes name="Variables\*.cs" />
+            </sources>
+        </csc>
+    </target>
+    <target name="test" depends="build">
+	<nant buildfile="Test\Opnieuw.Parsers.CSParser.Test.build" />
+    </target>
+</project>

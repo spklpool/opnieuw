@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<project name="Opnieuw.Refactorings.GenerateMethod.dll" default="build" basedir=".">
+    <description>Opnieuw.Refactorings.GenerateMethod.dll</description>
+    <property name="debug" value="false" />
+    <ifnot propertyexists="onlinux">
+	<property name="onlinux" value="false" />
+    </ifnot>
+    <target name="build" description="compiles the source code">
+        <csc target="library" output="..\..\bin\Opnieuw.Refactorings.GenerateMethod.dll" debug="${debug}">
+            <references>
+                <includes name="System.Data.dll" />
+                <includes name="System.Drawing.dll" />
+                <includes name="System.Windows.Forms.dll" />
+                <includes name="..\..\bin\Opnieuw.Parsers.CSParser.dll" />
+                <includes name="..\..\bin\Opnieuw.Framework.dll" />
+                <includes name="..\..\bin\Opnieuw.GUIKit.dll" />
+            </references>
+            <sources>
+                <includes name="GenerateMethodGUI.cs" />
+                <includes name="GenerateMethodRefactoring.cs" />
+            </sources>
+        </csc>
+    </target>
+    <target name="test" depends="build">
+	<nant buildfile="Test\Opnieuw.Refactorings.GenerateMethod.Test.build" />
+    </target>
+</project>

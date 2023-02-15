@@ -1,0 +1,231 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{90E092F1-41B5-4656-B26E-0321D5B632AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Opnieuw.Parsers.CSParser</RootNamespace>
+    <AssemblyName>Opnieuw.Parsers.CSParser</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arguments\Argument.cs" />
+    <Compile Include="Arguments\ArgumentCollection.cs" />
+    <Compile Include="Attributes\Attribute.cs" />
+    <Compile Include="Attributes\AttributeArguments.cs" />
+    <Compile Include="Attributes\AttributeCollection.cs" />
+    <Compile Include="Attributes\AttributeNamedArgument.cs" />
+    <Compile Include="Attributes\AttributeNamedArgumentList.cs" />
+    <Compile Include="Attributes\AttributePositionalArgument.cs" />
+    <Compile Include="Attributes\AttributePositionalArgumentList.cs" />
+    <Compile Include="Attributes\AttributeSection.cs" />
+    <Compile Include="Attributes\AttributeSectionCollection.cs" />
+    <Compile Include="Attributes\AttributeTarget.cs" />
+    <Compile Include="Attributes\AttributeTargetSpecifier.cs" />
+    <Compile Include="Classes\AccessorDeclaration.cs" />
+    <Compile Include="Classes\AccessorDeclarations.cs" />
+    <Compile Include="Classes\AddAccessorDeclaration.cs" />
+    <Compile Include="Classes\BaseTypeList.cs" />
+    <Compile Include="Classes\Class.cs" />
+    <Compile Include="Classes\ClassCollection.cs" />
+    <Compile Include="Classes\ClassMember.cs" />
+    <Compile Include="Classes\ClassMemberCollection.cs" />
+    <Compile Include="Classes\ConstantDeclaration.cs" />
+    <Compile Include="Classes\ConstantDeclarationCollection.cs" />
+    <Compile Include="Classes\ConstructorDeclaration.cs" />
+    <Compile Include="Classes\DestructorDeclaration.cs" />
+    <Compile Include="Classes\EventAccessorDeclaration.cs" />
+    <Compile Include="Classes\EventAccessorDeclarations.cs" />
+    <Compile Include="Classes\EventDeclaration.cs" />
+    <Compile Include="Classes\EventDeclarationCollection.cs" />
+    <Compile Include="Classes\FieldDeclaration.cs" />
+    <Compile Include="Classes\FieldDeclarationCollection.cs" />
+    <Compile Include="Classes\GetAccessorDeclaration.cs" />
+    <Compile Include="Classes\IndexerDeclaration.cs" />
+    <Compile Include="Classes\IndexerDeclarationCollection.cs" />
+    <Compile Include="Classes\MethodDeclaration.cs" />
+    <Compile Include="Classes\MethodDeclarationCollection.cs" />
+    <Compile Include="Classes\OperatorDeclaration.cs" />
+    <Compile Include="Classes\OperatorDeclarationCollection.cs" />
+    <Compile Include="Classes\OperatorDeclarator.cs" />
+    <Compile Include="Classes\PropertyDeclaration.cs" />
+    <Compile Include="Classes\PropertyDeclarationCollection.cs" />
+    <Compile Include="Classes\RemoveAccessorDeclaration.cs" />
+    <Compile Include="Classes\SetAccessorDeclaration.cs" />
+    <Compile Include="CommaSeperatedCollection.cs" />
+    <Compile Include="CSCodeDomProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CSharpParser.cs" />
+    <Compile Include="CSRefactoring.cs" />
+    <Compile Include="cs-tokenizer.cs" />
+    <Compile Include="Delegates\Delegate.cs" />
+    <Compile Include="Enums\EnumBase.cs" />
+    <Compile Include="Enums\EnumDeclaration.cs" />
+    <Compile Include="Enums\EnumMember.cs" />
+    <Compile Include="Enums\EnumMemberCollection.cs" />
+    <Compile Include="Expressions\ArrayCreationExpression.cs" />
+    <Compile Include="Expressions\AssignmentExpression.cs" />
+    <Compile Include="Expressions\ConditionalExpression.cs" />
+    <Compile Include="Expressions\Expression.cs" />
+    <Compile Include="Expressions\ExpressionCollection.cs" />
+    <Compile Include="Expressions\Identifier.cs" />
+    <Compile Include="Expressions\IdentifierCollection.cs" />
+    <Compile Include="Expressions\InvocationExpression.cs" />
+    <Compile Include="Expressions\Literal.cs" />
+    <Compile Include="Expressions\PrimaryExpression.cs" />
+    <Compile Include="Expressions\PrimaryNoArrayCreationExpression.cs" />
+    <Compile Include="Expressions\QualifiedIdentifier.cs" />
+    <Compile Include="Expressions\RelationalExpression.cs" />
+    <Compile Include="Expressions\UnaryExpression.cs" />
+    <Compile Include="Interfaces\Interface.cs" />
+    <Compile Include="Interfaces\InterfaceAccessors.cs" />
+    <Compile Include="Interfaces\InterfaceCollection.cs" />
+    <Compile Include="Interfaces\InterfaceEvent.cs" />
+    <Compile Include="Interfaces\InterfaceGetAccessor.cs" />
+    <Compile Include="Interfaces\InterfaceIndexer.cs" />
+    <Compile Include="Interfaces\InterfaceMember.cs" />
+    <Compile Include="Interfaces\InterfaceMemberCollection.cs" />
+    <Compile Include="Interfaces\InterfaceMethod.cs" />
+    <Compile Include="Interfaces\InterfaceProperty.cs" />
+    <Compile Include="Interfaces\InterfaceSetAccessor.cs" />
+    <Compile Include="KeywordCollection.cs" />
+    <Compile Include="Modifiers\Modifier.cs" />
+    <Compile Include="Modifiers\ModifierCollection.cs" />
+    <Compile Include="Namespaces\ContainerNamespace.cs" />
+    <Compile Include="Namespaces\Namespace.cs" />
+    <Compile Include="Namespaces\NamespaceCollection.cs" />
+    <Compile Include="Namespaces\NamespaceMember.cs" />
+    <Compile Include="Namespaces\NamespaceMemberCollection.cs" />
+    <Compile Include="Namespaces\TypeDeclaration.cs" />
+    <Compile Include="Namespaces\UsingAliasDirective.cs" />
+    <Compile Include="Namespaces\UsingDirective.cs" />
+    <Compile Include="Namespaces\UsingDirectiveCollection.cs" />
+    <Compile Include="Namespaces\UsingNamespaceDirective.cs" />
+    <Compile Include="Parameters\FixedParameter.cs" />
+    <Compile Include="Parameters\FixedParameterCollection.cs" />
+    <Compile Include="Parameters\FormalParameterList.cs" />
+    <Compile Include="Parameters\Parameter.cs" />
+    <Compile Include="Parameters\ParameterArray.cs" />
+    <Compile Include="Parameters\ParameterCollection.cs" />
+    <Compile Include="Parameters\ParameterModifier.cs" />
+    <Compile Include="PieceOfCodeCollectionBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Statements\BlockStatement.cs" />
+    <Compile Include="Statements\CatchClause.cs" />
+    <Compile Include="Statements\CatchClauseCollection.cs" />
+    <Compile Include="Statements\CheckedStatement.cs" />
+    <Compile Include="Statements\ConstructorInitializer.cs" />
+    <Compile Include="Statements\DeclarationStatement.cs" />
+    <Compile Include="Statements\DoStatement.cs" />
+    <Compile Include="Statements\EmptyStatement.cs" />
+    <Compile Include="Statements\ExpressionStatement.cs" />
+    <Compile Include="Statements\FinallyClause.cs" />
+    <Compile Include="Statements\ForeachStatement.cs" />
+    <Compile Include="Statements\ForInitializer.cs" />
+    <Compile Include="Statements\ForStatement.cs" />
+    <Compile Include="Statements\IfStatement.cs" />
+    <Compile Include="Statements\JumpStatement.cs" />
+    <Compile Include="Statements\LabeledStatement.cs" />
+    <Compile Include="Statements\LockStatement.cs" />
+    <Compile Include="Statements\Statement.cs" />
+    <Compile Include="Statements\StatementCollection.cs" />
+    <Compile Include="Statements\SwitchBlock.cs" />
+    <Compile Include="Statements\SwitchLabel.cs" />
+    <Compile Include="Statements\SwitchLabelCollection.cs" />
+    <Compile Include="Statements\SwitchSection.cs" />
+    <Compile Include="Statements\SwitchSectionCollection.cs" />
+    <Compile Include="Statements\SwitchStatement.cs" />
+    <Compile Include="Statements\TryStatement.cs" />
+    <Compile Include="Statements\UncheckedStatement.cs" />
+    <Compile Include="Statements\UsingStatement.cs" />
+    <Compile Include="Statements\WhileStatement.cs" />
+    <Compile Include="Structs\StructDeclaration.cs" />
+    <Compile Include="Structs\StructMember.cs" />
+    <Compile Include="Structs\StructMemberCollection.cs" />
+    <Compile Include="TokenProvider.cs" />
+    <Compile Include="Types\ArrayType.cs" />
+    <Compile Include="Types\BasicType.cs" />
+    <Compile Include="Types\DataType.cs" />
+    <Compile Include="Types\DataTypeCollection.cs" />
+    <Compile Include="Types\DimSeperator.cs" />
+    <Compile Include="Types\DimSeperatorCollection.cs" />
+    <Compile Include="Types\RankSpecifier.cs" />
+    <Compile Include="Types\RankSpecifierCollection.cs" />
+    <Compile Include="Utilities\BookmarkKeeper.cs" />
+    <Compile Include="Utilities\Comments\Comment.cs" />
+    <Compile Include="Utilities\Comments\CommentCollection.cs" />
+    <Compile Include="Utilities\Comments\DelimitedComment.cs" />
+    <Compile Include="Utilities\Comments\SingleLineComment.cs" />
+    <Compile Include="Utilities\CompilationUnit.cs" />
+    <Compile Include="Utilities\CompilationUnitCollection.cs" />
+    <Compile Include="Utilities\FormattingPropertiesCollection.cs" />
+    <Compile Include="Utilities\FormattingProperties.cs" />
+    <Compile Include="Utilities\ModifyablePieceOfCodeWithAttributes.cs" />
+    <Compile Include="Utilities\NamedMember.cs" />
+    <Compile Include="Utilities\ParserException.cs" />
+    <Compile Include="Utilities\PieceOfCode.cs" />
+    <Compile Include="Utilities\PieceOfCodeCollection.cs" />
+    <Compile Include="Utilities\PieceOfCodeWithAttributes.cs" />
+    <Compile Include="Utilities\PositionToken.cs" />
+    <Compile Include="Utilities\PositionTokenCollection.cs" />
+    <Compile Include="Utilities\StatementContainer.cs" />
+    <Compile Include="Utilities\Token.cs" />
+    <Compile Include="Variables\ArrayInitializer.cs" />
+    <Compile Include="Variables\LocalConstantDeclaration.cs" />
+    <Compile Include="Variables\LocalVariableDeclaration.cs" />
+    <Compile Include="Variables\MissingVariableInitializer.cs" />
+    <Compile Include="Variables\Variable.cs" />
+    <Compile Include="Variables\VariableCollection.cs" />
+    <Compile Include="Variables\VariableDeclarator.cs" />
+    <Compile Include="Variables\VariableDeclaratorCollection.cs" />
+    <Compile Include="Variables\VariableInitializer.cs" />
+    <Compile Include="Variables\VariableInitializerCollection.cs" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Opnieuw.Framework.csproj">
+      <Project>{D617D51B-8B17-435E-BB8C-A814319A6333}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+      <Name>Opnieuw.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+</Project>

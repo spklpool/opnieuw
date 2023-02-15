@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<project name="Opnieuw.Framework.Test" default="test" basedir=".">
+    <description>Opnieuw.Framework.Test</description>
+    <ifnot propertyexists="formatterType">
+	<property name="formatterType" value="Plain" />
+    </ifnot>
+    <ifnot propertyexists="onlinux">
+	<property name="onlinux" value="false" />
+    </ifnot>
+    <property name="debug" value="true" />
+    <target name="build" description="compiles the source code">
+        <csc target="library" output="..\..\..\bin\Opnieuw.Parsers.CSParser.Test.dll" debug="${debug}">
+            <references>
+                <includes name="..\..\..\lib\nunit.framework.dll" />
+                <includes name="..\..\..\bin\Opnieuw.Parsers.CSParser.dll" />
+                <includes name="..\..\..\bin\Opnieuw.Framework.dll" />
+                <includes name="..\..\..\bin\Opnieuw.GUIKit.dll" />
+            </references>
+            <sources>
+                <includes name="*.cs" />
+                <includes name="Expressions\*.cs" />
+                <includes name="Arguments\*.cs" />
+                <includes name="Utilities\*.cs" />
+            </sources>
+        </csc>
+    </target>
+    <target name="test" depends="build">
+	<ifnot propertytrue="onlinux">
+	    <nunit2>
+		<formatter type="${formatterType}" usefile="false"/>
+		<test assemblyname="..\..\..\bin\Opnieuw.Parsers.CSParser.Test.dll" fork="true"/>
+	    </nunit2>
+	</ifnot>
+    </target>
+</project>

@@ -1,0 +1,128 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{191F4451-8561-4235-9128-B7EF06E9B383}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GUIKit</RootNamespace>
+    <AssemblyName>GUIKit</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackgroundWorker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BackgroundWorkerEvents.cs" />
+    <Compile Include="Caret.cs" />
+    <Compile Include="CodeRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ConfigurationManager.cs" />
+    <Compile Include="CSCode.cs" />
+    <Compile Include="CSCodeLine.cs" />
+    <Compile Include="CustomScrollControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DebugWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ICodeTabControl.cs" />
+    <Compile Include="ICodeTreeView.cs" />
+    <Compile Include="ICodeViewTabPage.cs" />
+    <Compile Include="MissingCodeDomProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MultiSelectableTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MultiUnitView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParserProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CodeRichTextBox.resx">
+      <DependentUpon>CodeRichTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiSelectableTreeView.resx">
+      <DependentUpon>MultiSelectableTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParserProgress.resx">
+      <DependentUpon>ParserProgress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RefactoringGUI.resx">
+      <DependentUpon>RefactoringGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RefactoringTabPage.resx">
+      <DependentUpon>RefactoringTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RefactoringGUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RefactoringsSchema.cs" />
+    <Compile Include="RefactoringTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StaticCodeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewControler.cs" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\Opnieuw.Framework.csproj">
+      <Project>{D617D51B-8B17-435E-BB8C-A814319A6333}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+      <Name>Opnieuw.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Parsers\CSParser\Opnieuw.Parsers.CSParser.csproj">
+      <Project>{90E092F1-41B5-4656-B26E-0321D5B632AE}</Project>
+      <Name>Opnieuw.Parsers.CSParser</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+</Project>

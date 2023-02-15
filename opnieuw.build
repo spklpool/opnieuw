@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<project name="Opnieuw master" default="TreeBrowser" basedir=".">
+	<description>Opnieuw master</description>
+	<property name="debug" value="true" />
+	<ifnot propertyexists="onlinux">
+		<property name="onlinux" value="false" />
+	</ifnot>
+	<target name="init">
+		<delete dir="bin" failonerror="false" />
+		<copy file="GUIKit\Refactorings.xml" tofile="bin\Refactorings.xml" />
+	</target>
+ 	<target name="Framework">
+		<nant buildfile="Framework\Opnieuw.Framework.build" />
+	</target>
+ 	<target name="CSParser" depends="Framework">
+		<nant buildfile="Parsers\CSParser\Opnieuw.Parsers.CSParser.build" />
+	</target>
+ 	<target name="GUIKit" depends="Framework,CSParser">
+		<nant buildfile="GUIKit\Opnieuw.GUIKit.build" />
+ 	</target>
+ 	<target name="ExtractMethod" depends="Framework,GUIKit,CSParser">
+		<nant buildfile="Refactorings\ExtractMethod\Opnieuw.Refactorings.ExtractMethod.build" />
+	</target>
+ 	<target name="ExtractInterface" depends="Framework,GUIKit,CSParser">
+		<nant buildfile="Refactorings\ExtractInterface\Opnieuw.Refactorings.ExtractInterface.build" />
+	</target>
+ 	<target name="RenamePrivateMethod" depends="Framework,GUIKit,CSParser">
+		<nant buildfile="Refactorings\RenamePrivateMethod\Opnieuw.Refactorings.RenamePrivateMethod.build" />
+	</target>
+ 	<target name="TreeBrowser" depends="RenamePrivateMethod,ExtractInterface,ExtractMethod,Framework,GUIKit,CSParser">
+		<nant buildfile="UI\TreeBrowser\Opnieuw.UI.TreeBrowser.build" />
+ 	</target>
+</project>

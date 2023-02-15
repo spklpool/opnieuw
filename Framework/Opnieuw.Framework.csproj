@@ -1,0 +1,97 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D617D51B-8B17-435E-BB8C-A814319A6333}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Opnieuw.Framework</RootNamespace>
+    <AssemblyName>Opnieuw.Framework</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code.cs" />
+    <Compile Include="CodeChangeCommand.cs" />
+    <Compile Include="CodeChangeCommandCollection.cs" />
+    <Compile Include="CodeChangeCommandWorker.cs" />
+    <Compile Include="CodeChanger.cs" />
+    <Compile Include="CodeCommand.cs" />
+    <Compile Include="CodeCommandBackspace.cs" />
+    <Compile Include="CodeCommandDelete.cs" />
+    <Compile Include="CodeCommandKeyPress.cs" />
+    <Compile Include="CodeCommandProdessor.cs" />
+    <Compile Include="CodeCommandStack.cs" />
+    <Compile Include="CodeCompileUnitCollection.cs" />
+    <Compile Include="CodeLine.cs" />
+    <Compile Include="CodeLineCollection.cs" />
+    <Compile Include="CodeReplacement.cs" />
+    <Compile Include="CodeReplacementCollection.cs" />
+    <Compile Include="CodeSelection.cs" />
+    <Compile Include="ColoredStringPart.cs" />
+    <Compile Include="ColoredStringPartCollection.cs" />
+    <Compile Include="CreateFileCodeChangeCommand.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="FileCodeChanger.cs" />
+    <Compile Include="FileCreateFileCodeChangeCommandWorker.cs" />
+    <Compile Include="FileReplaceCodeChangeCommandWorker.cs" />
+    <Compile Include="FundamentalPieceOfCode.cs" />
+    <Compile Include="FundamentalPieceOfCodeCollection.cs" />
+    <Compile Include="GenericBlockOfCode.cs" />
+    <Compile Include="GenericLineOfCode.cs" />
+    <Compile Include="IPositionProvider.cs" />
+    <Compile Include="MissingCodeCompiler.cs" />
+    <Compile Include="MissingCodeGenerator.cs" />
+    <Compile Include="MissingCodeParser.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="OpnieuwParser.cs" />
+    <Compile Include="Position.cs" />
+    <Compile Include="PositionCollection.cs" />
+    <Compile Include="PrettyPrintParams.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Refactoring.cs" />
+    <Compile Include="ReplaceCodeChangeCommand.cs" />
+    <Compile Include="StringPart.cs" />
+    <Compile Include="TrailOfBreadCrumbs.cs" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+</Project>

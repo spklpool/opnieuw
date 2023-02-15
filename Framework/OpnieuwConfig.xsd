@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="OpnieuwConfig" targetNamespace="http://tempuri.org/OpnieuwConfig.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/OpnieuwConfig.xsd" xmlns:mstns="http://tempuri.org/OpnieuwConfig.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="OpnieuwConfiguration">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LanguageList">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Language">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Name" type="xs:string" />
+										<xs:element name="TreeViewClassName" type="xs:string" />
+										<xs:element name="ParserClassName" type="xs:string" />
+										<xs:element name="FriendlyName" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RefactoringList">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Refactoring">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Name" type="xs:string" />
+										<xs:element name="GUIClassName" type="xs:string" />
+										<xs:element name="ClassName" type="xs:string" />
+										<xs:element name="FriendlyName" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

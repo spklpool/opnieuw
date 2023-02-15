@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<project name="Opnieuw.UI.GTKSharp.exe" default="build" basedir=".">
+    <description>Opnieuw.UI.GTKSharp.exe</description>
+    <property name="debug" value="false" />
+    <target name="build" description="compiles the source code">
+        <csc target="exe" output="..\..\bin\Opnieuw.UI.GTKSharp.exe" debug="${debug}">
+            <references>
+                <includes name="gtk-sharp.dll" />
+                <includes name="gdk-sharp.dll" />
+                <includes name="System.Drawing.dll" />
+                <includes name="..\bin\Opnieuw.Parsers.CSParser.dll" />
+                <includes name="..\bin\Opnieuw.Framework.dll" />
+                <includes name="..\bin\Opnieuw.GUIKit.dll" />
+            </references>
+            <sources>
+                <includes name="RefactoringBrowser.cs" />
+            </sources>
+        </csc>
+    </target>
+</project>
